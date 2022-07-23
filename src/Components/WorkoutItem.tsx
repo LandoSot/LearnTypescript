@@ -1,12 +1,13 @@
 import { StyleSheet, View } from 'react-native'
 import { Workout } from '../JSON/DataTypes'
+import { formatSec } from '../Utilities/Time'
 import { VICWANT_TextBold, VICWANT_TextRegular } from './Styled/VICWANT_Text'
 
 export default function WorkoutItem({ item }: { item: Workout }) {
   return (
     <View style={styles.container}>
       <VICWANT_TextBold style={styles.name}>{item.name}</VICWANT_TextBold>
-      <VICWANT_TextRegular style={styles.content}>Duration: {item.duration}</VICWANT_TextRegular>
+      <VICWANT_TextRegular style={styles.content}>Duration: {formatSec(item.duration)} min</VICWANT_TextRegular>
       <VICWANT_TextRegular style={styles.content}>Difficulty: {item.difficulty}</VICWANT_TextRegular>
     </View>
   )
