@@ -1,12 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import { Workout } from '../JSON/dataTypes'
+import { VICWANT_TextBold, VICWANT_TextRegular } from './Styled/VICWANT_Text'
 
 export default function WorkoutItem({ item }: { item: Workout }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.name}>{item.name}</Text>
-      <Text style={styles.duration}>Duration: {item.duration}</Text>
-      <Text style={styles.difficulty}>Difficulty: {item.difficulty}</Text>
+      <VICWANT_TextBold style={styles.name}>{item.name}</VICWANT_TextBold>
+      <VICWANT_TextRegular style={styles.content}>Duration: {item.duration}</VICWANT_TextRegular>
+      <VICWANT_TextRegular style={styles.content}>Difficulty: {item.difficulty}</VICWANT_TextRegular>
     </View>
   )
 }
@@ -22,13 +23,9 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 15,
-    fontWeight: 'bold',
     marginBottom: 5
   },
-  duration: {
-    fontSize: 15
-  },
-  difficulty: {
+  content: {
     fontSize: 15
   }
 })
