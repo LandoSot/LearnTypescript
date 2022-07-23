@@ -1,15 +1,26 @@
+import React from 'react'
 import { NativeStackHeaderProps } from '@react-navigation/native-stack'
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native'
 import { Workout } from '../JSON/DataTypes'
-import data from '../JSON/Data.json'
 import WorkoutItem from '../Components/WorkoutItem'
+import { getData } from '../Storage/AsyncStorage'
 
 export default function HomeSrcreen({ navigation }: NativeStackHeaderProps) {
+  const [workouts, setWorkouts] = React.useState<Workout[]>([])
+
+  React.useEffect(() => {
+    async function setData() {
+      setWorkouts(await getData('workout-data'))
+    }
+
+    setData()
+  }, [])
+
   return (
     <View style={styles.container}>
       <Text style={styles.header}>New Workouts</Text>
       <FlatList
-        data={data as Workout[]}
+        data={workouts}
         keyExtractor={item => item.slug}
         renderItem={({ item }) => {
           return (
