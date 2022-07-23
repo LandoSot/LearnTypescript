@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import HomeSrcreen from '../screens/HomeScreen'
-import PlannerScreen from '../screens/PlannerScreen'
+import HomeSrcreen from '../Screens/HomeScreen'
+import PlannerScreen from '../Screens/PlannerScreen'
 import { FontAwesome5 } from '@expo/vector-icons'
 
 const BottomTab = createBottomTabNavigator()

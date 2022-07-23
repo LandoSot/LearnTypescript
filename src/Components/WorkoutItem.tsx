@@ -1,5 +1,5 @@
 import { StyleSheet, View } from 'react-native'
-import { Workout } from '../JSON/dataTypes'
+import { Workout } from '../JSON/DataTypes'
 import { VICWANT_TextBold, VICWANT_TextRegular } from './Styled/VICWANT_Text'
 
 export default function WorkoutItem({ item }: { item: Workout }) {
