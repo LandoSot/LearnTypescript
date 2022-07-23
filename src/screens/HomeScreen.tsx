@@ -13,7 +13,7 @@ export default function HomeSrcreen({ navigation }: NativeStackHeaderProps) {
         keyExtractor={item => item.slug}
         renderItem={({ item }) => {
           return (
-            <Pressable onPress={() => console.log(item.name)}>
+            <Pressable onPress={() => navigation.navigate('WorkoutDetail', { item: item })}>
               <WorkoutItem item={item} />
             </Pressable>
           )
