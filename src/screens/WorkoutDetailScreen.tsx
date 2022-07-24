@@ -1,12 +1,14 @@
 import { NativeStackHeaderProps } from '@react-navigation/native-stack'
-import { StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text, View } from 'react-native'
 import { Workout } from '../JSON/DataTypes'
 
 export default function WorkoutDetailScreen({ navigation, route }: Navigation) {
+  const workout = route.params.item
+
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Workouts Detail</Text>
-      <Text>{route.params.item.slug}</Text>
+      <Text style={styles.header}>{workout.name}</Text>
+      <Button title='check' onPress={() => alert('Open modal')}>Check Sequence</Button>
     </View>
   )
 }
